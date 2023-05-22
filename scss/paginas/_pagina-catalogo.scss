@@ -1,0 +1,116 @@
+// -------catalogo----------
+
+.titulo {
+    color: $vargray;
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    letter-spacing: $varletter-2;
+    @include tablet{
+        font-size: 1.4rem;
+        color: $vargray-400;
+    }
+}
+
+// -------tarjetas reversibles----------
+
+
+.contenedor-tarjeta {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .tarjeta {
+        position: relative;
+        width: 300px;
+        height: 350px;
+        display: flex;
+        margin: 20px;
+    @include tablet{    
+        width: 170px;
+        height: 180px;
+        margin: 3px;
+
+            }
+        .cara {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .5s;
+
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+
+            }
+
+            p {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 45px;
+                line-height: 45px;
+                color: $vargray;
+                letter-spacing: $varletter-2;
+                background-color: rgba(0, 0, 0, .4);
+                text-align: center;
+                @include tablet{
+                    bottom: -15px;
+                     width: 100%;
+                      height: 24px;
+                     line-height: 27px;
+                     font-size: 12px;
+                     color: $vargray-300;
+                }
+
+            }
+
+            .producto {
+                bottom: 272px;
+                @extend p ;
+                @include tablet {
+                    bottom: 135px;
+                    font-size: 12px;
+                    letter-spacing: normal;
+                    color: $vargray-300;
+                }
+
+            }
+        }
+
+        .adelante {
+            transform: perspective(600px) rotateY(0deg);
+            box-shadow: 0 5px 10px black;
+        }
+
+        .atras {
+            transform: perspective(600px) rotateY(180deg);
+            box-shadow: 0 5px 10px black;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+
+        &:hover .adelante {
+            transform: perspective(600px) rotateY(180deg);
+        }
+
+        &:hover .atras {
+            transform: perspective(600px) rotateY(360deg);
+        }
+    }
+
+}
+

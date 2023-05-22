@@ -1,0 +1,187 @@
+
+
+
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    color: $varwhite;
+    font-family: $nunitosans;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    @include tablet{
+        font-size: 26px;
+        color: $vargray-500;
+    }
+
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 25px;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+
+    }
+   
+// ----metodologia BEM---------
+
+    .contenedor-grid__bloque-1 {
+        display: flex;
+        padding: 5px 15px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+         background-color: transparent;
+         border: 4px solid;
+        margin: 54px; 
+    
+    }
+
+
+    .contenedor-grid__bloque-2{
+        @extend  .contenedor-grid__bloque-1;
+
+        a {
+            text-decoration: none;
+        }
+
+    }
+
+
+    p {
+        text-align: center;
+        letter-spacing: $varletter-2;
+        color: $varwhite;
+        padding: 10px;
+        text-align: left;
+        line-height: 40px;
+        font-family: $nunitosans;
+        font-size: 15px;
+        @include tablet{
+            font-size: 13px;
+            color: $vargray-400;
+        }
+
+
+    }
+
+}
+
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+    @include tablet {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    }
+    
+
+    figure {
+        position: relative;
+        // ----------tamaño de la caja de la img-----------
+        height: 90%;
+        width: 90%;
+        overflow: hidden;
+        border-radius: 6px;
+
+
+        //   ver si se incluye box shadoww
+        img {
+            width: 100%;
+            height: 100%;
+            transition: all 500ms ease-out;
+
+        }
+
+
+        // -----aca se trabaja con el texto dentro de la tarjeta------
+        .capa {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: all 500ms ease-out;
+            opacity: 0;
+            visibility: hidden;
+            text-align: center;
+
+            h2 {
+                color: $vargray-400;
+                margin-bottom: 120px;
+                transition: all 500ms ease-out;
+                margin-top: 20px;
+                @include tablet{
+                    color: $vargray-400;
+                    font-size: 14px;
+                }
+             
+
+            }
+
+            i {
+                color: $varaqua;
+                margin: 8px;
+
+
+            }
+        }
+    }
+}
+
+.contenedor figure:hover>.capa {
+    opacity: 1;
+    visibility: visible;
+
+
+
+    h2 {
+        margin-top: 70px;
+        margin-bottom: 15px;
+        letter-spacing: $varletter-2;
+        color: $vargray-400;
+        @include tablet{
+            color: $vargray-400;
+            font-size: 14px;
+        }
+    }
+
+    p {
+        color: $vargray-600;
+        letter-spacing: $varletter-2;
+        font-style: italic;
+        max-width: 220px;
+        margin: auto;
+        font-size: 15px;
+        @include tablet {
+            color: $vargray-400;
+            font-size: 11px;
+
+        }
+
+    }
+    
+    i {
+
+    color: $varaqua;
+    margin: 8px;
+   
+}
+
+
+}
+
+.contenedor figure:hover>img {
+    transform: scale(1.3);
+}

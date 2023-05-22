@@ -1,0 +1,64 @@
+.main-contacto {
+    display: flex;
+    justify-content: space-between;
+    @include tablet{
+        justify-content: center;
+    }
+   
+
+    @include tablet {
+        flex-wrap: wrap;
+        padding: 0;
+        margin: auto;
+
+    }
+
+    .contenedor-grid-titulo-parrafo {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        width: 300px;
+        margin-left: 50px;
+        @include tablet{
+            margin: 0;
+            justify-content: space-evenly;
+            
+        }
+ 
+
+
+       p {
+            color: $vargray-400;
+            letter-spacing: $varletter-2;
+            font-style: italic;
+            margin-left: 20px;
+            text-align: center;
+            font-family: $nunitosans;
+            font-size: 16px;
+
+            @include tablet{
+                font-size: 14px;
+                @include mobile{
+                    color: $varwhite
+                }
+               
+
+            }
+        }
+
+       h1 {
+            color: $vargray;
+            letter-spacing: $varletter-2;
+            margin-left:20px;
+            text-align: center;
+            font-size: 3.1rem;
+            @include tablet{
+                font-size: 26px;
+                @include mobile{
+                    color: $varwhite;
+                }
+         
+            }
+        }
+    }
+}

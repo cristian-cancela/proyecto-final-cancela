@@ -1,0 +1,54 @@
+
+
+
+        
+
+
+/* fondo catalogo */
+
+.fondo-catalogo {
+    background-image: url("../img/fondo-viejo-negro.avif");
+    @include fondos {
+                   
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -10;
+        background-attachment: fixed;
+    
+    }
+}
+
+// fondo como comprar
+
+.fondo-como-comprar {
+    background-image: url("../img/fondo-superficie.avif");
+   @extend .fondo-catalogo;
+
+}
+
+// fondo de imagen para conocenos
+.fondo-conocenos {
+    background-image: url("../img/fondo\ para\ armar\ conocenos.avif");
+   @extend .fondo-catalogo;
+}
+
+/* fondo imagen en contacto*/
+.fondo-contacto {
+
+    background-image: url("../img/fondo\ para\ probar.avif");
+    background-size: cover;
+    background-position: initial;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    background-attachment: fixed;
+    @include tablet {
+        background-position: center;
+    }
+}

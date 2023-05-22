@@ -1,0 +1,169 @@
+// --------inicio-------------
+
+.main-index {
+    background-color: transparent;
+    min-height: 90vh;
+
+    /* eslogan */
+
+    .eslogan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+        flex-direction: column;
+
+        @include mobile {
+
+            text-align: center;
+            height: 460px;
+
+        }
+
+        H1 {
+            color: $vargray;
+            font-size: 40px;
+            letter-spacing: $varletter-2;
+
+            @include mobile {
+                font-size: 28px;
+                color: $vargray-400;
+
+            }
+        }
+
+        p {
+            color: $vargray;
+            letter-spacing: $varletter-2;
+    
+
+
+            @include tablet {
+
+                margin: 30px;
+                font-size: 13px;
+                color: $vargray-400;
+                letter-spacing: $varletter-2;
+
+            }
+        }
+
+    }
+
+    .titulo {
+        @include tablet {
+            font-size: 18px;
+            letter-spacing: $varletter-2;
+            color: $vargray-400
+        }
+    }
+
+    // -------tarjetas reversibles----------
+
+    .contenedor-tarjeta {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .tarjeta {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            display: flex;
+            margin: 20px;
+
+            @include tablet {
+                width: 250px;
+                height: 300px;
+                margin: 10px;
+
+            }
+
+            .cara {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: .7s;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 45px;
+                    line-height: 45px;
+                    color: $vargray;
+                    letter-spacing: $varletter-2;
+                    background-color: rgba(0, 0, 0, .4);
+                    text-align: center;
+                    @include tablet{
+                        height: 45px;
+                        line-height: 40px;
+                        bottom: -6px;
+                        font-size: 13px;
+                        color: $varwhite;
+                    }
+                }
+
+                .producto {
+
+                    position: absolute;
+                    bottom: 272px;
+                    width: 100%;
+                    height: 45px;
+                    line-height: 45px;
+                    color: $vargray;
+                    letter-spacing: $varletter-2;
+                    background-color: rgba(0, 0, 0, .4);
+                    text-align: center;
+                    @include tablet{
+                        bottom: 226px;
+                        font-size: 13px;
+                        color: $varwhite;
+                    }
+
+
+                }
+            }
+
+            .adelante {
+                transform: perspective(600px) rotateY(0deg);
+                box-shadow: 0 5px 10px black;
+            }
+
+            .atras {
+                transform: perspective(600px) rotateY(180deg);
+                box-shadow: 0 5px 10px black;
+
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+
+            &:hover .adelante {
+                transform: perspective(600px) rotateY(180deg);
+            }
+
+            &:hover .atras {
+                transform: perspective(600px) rotateY(360deg);
+            }
+        }
+
+    }
+}

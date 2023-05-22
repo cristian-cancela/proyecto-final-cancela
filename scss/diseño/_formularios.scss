@@ -1,0 +1,103 @@
+.contenedor-contacto {
+    position: relative;
+    width: 350px;
+    height: 410px;
+    backdrop-filter: blur(0px);
+    border: 2px solid $varblack;
+    border-radius: 20px;
+    box-shadow: 0 0 20px $varblack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 150px;
+    @include tablet {
+        backdrop-filter: blur(5px);
+        margin: auto;
+        box-shadow: none;
+        border: 1px solid $vargray;
+        
+
+    }
+
+
+    h2 {
+        font-size: 2.3em;
+        color: $varblack;
+        text-align: center;
+        letter-spacing: $varletter-2;
+
+        @include tablet {
+            font-size: 26px;
+            color: $vargray-400;
+        }
+    }
+
+
+
+    .contenedor-contacto .contenedor-registro {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .entrada-caja {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        border-bottom: 2px solid $varblack;
+        margin: 30px 0;
+
+        @include tablet {
+            border-bottom: 2px solid $vargray;
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: $varblack;
+            font-weight: 500;
+            pointer-events: none;
+            transition: .5s;
+
+            @include tablet {
+                color: $vargray-400;
+                font-size: 12px;
+            }
+        }
+
+        .bi {
+            position: absolute;
+            right: 8px;
+            line-height: 45px;
+
+            &::before {
+                color: $varaqua;
+            }
+        }
+    }
+
+    .entrada-caja input:focus~label,
+    .entrada-caja input:valid~label {
+        top: -5px;
+
+    }
+
+    .entrada-caja input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        color: $varblack;
+        padding: 0 35px 0 5px;
+
+        @include tablet {
+            color: $varwhite;
+        }
+    }
+
+
+}

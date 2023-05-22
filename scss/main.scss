@@ -1,0 +1,67 @@
+
+// ------base-------------------
+
+@import"./base/tipografia";
+
+@import"./base/reset";
+
+// -----abstracciones-------------
+
+@import"./abstracciones/espaciado-letra";
+
+@import"./abstracciones/colores-anchos";
+
+@import"./abstracciones/_mixin-condicional";
+
+// ------diseño-------------
+
+@import "./diseño/fondos";
+
+@import"./diseño/footer";
+
+@import"./diseño/header";
+
+@import"./diseño/formularios";
+
+
+// --------componentes------------
+
+@import"./componentes/botones";
+
+// ------paginas----------
+
+@import"./paginas/pagina-inicio";
+
+@import"./paginas/pagina-catalogo";
+
+@import"./paginas/pagina-como-comprar";
+
+@import"./paginas/pagina-conocenos";
+
+@import"./paginas/pagina-contacto";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
